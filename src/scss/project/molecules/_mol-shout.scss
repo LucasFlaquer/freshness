@@ -1,0 +1,9 @@
+.shout {
+	margin-bottom: 50px;
+	p {
+		font-size: 22px;
+		font-style: italic;
+		color: darken($gray, 40);
+		text-align: center;
+	}
+}

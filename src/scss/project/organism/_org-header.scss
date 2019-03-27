@@ -1,0 +1,215 @@
+.header {
+	padding: 25px 20px;
+	border-top: 5px solid $light-blue;
+	border-bottom: 2px solid $gray;
+	background: $white;
+	-webkit-transition: all .2s ease;
+	   -moz-transition: all .2s ease;
+	    -ms-transition: all .2s ease;
+	     -o-transition: all .2s ease;
+	        transition: all .2s ease;
+	&.fixed {
+		position: fixed;
+		width: 100%;
+		top: -100px;
+		z-index: 3;
+		// padding: 5px;
+		// -webkit-transition: all .6s ease;
+		//    -moz-transition: all .6s ease;
+		//     -ms-transition: all .6s ease;
+		//      -o-transition: all .6s ease;
+		//         transition: all .6s ease;
+		
+	}
+	&--block {
+		justify-content: space-between;
+		display: flex;
+	}
+	&--list {
+		list-style: none;
+		padding-left: 0;
+		margin-bottom: 0;
+
+		li {	
+			display: inline-block;
+		}
+	}
+	&--social { 
+		a {
+			display: block;
+			width: 32px;
+			height: 32px;
+			position: relative;
+			border-radius: 50%;
+			background-color: $black;
+			.fa {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				color: $white;
+				-webkit-transform: translate(-50%, -50%);
+				   -moz-transform: translate(-50%, -50%);
+				    -ms-transform: translate(-50%, -50%);
+				     -o-transform: translate(-50%, -50%);
+				        transform: translate(-50%, -50%);
+			}
+			&:hover {
+				background-color: $orange;
+			}
+		}
+	}
+	&--search {
+		input {
+	    padding: 6px 10px;
+	    border: 1px solid transparent;
+	    border-radius: 13px;
+			background-color: $black;
+	    color: $white;
+	    outline: none;
+	    &::placeholder {
+	    	color: $white;
+	    }
+		}
+	}
+	&--nav {
+		align-self: flex-end;
+	}
+	&--link {
+		color: darken($gray, 40);
+		margin-right: 10px;
+		// font-weight: bold;
+		&:hover {
+			color:$light-blue;
+			text-decoration: none;
+		}
+	}
+	&--mobile {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.sidenav {
+	    position: fixed;
+	    top: 0;
+	    z-index: 3;
+	    right: -260px;
+	    width: 235px;
+	    height: 100vh;
+	    background: $light-blue;
+	    padding: 10px;
+	    -webkit-transition: all .8s ease;
+	       -moz-transition: all .8s ease;
+	        -ms-transition: all .8s ease;
+	         -o-transition: all .8s ease;
+	            transition: all .8s ease;
+	    .header {
+	    	&--search {
+	    		margin-bottom: 20px;
+	    		font-size: 13px;
+	    		text-align: center;
+	    		.btn-blue {
+	    			padding: 5px 10px;
+    				border-radius: 50%;
+	    		}
+	    	}
+	    	&--list {
+	    		text-align: center;
+	    		&__social {
+	    			margin-bottom: 20px;
+	    		}
+	    		&__nav {
+	    			display: flex;
+	    			flex-direction: column;
+	    			align-items: flex-start;
+	    			justify-content: center;
+	    		}
+	    	}
+	    	&--link {
+	    		color: darken($gray, 60);
+	    		&:hover {
+	    			color:$orange;
+	    		}
+	    	}
+	    }
+	    &.open {
+	    	right: 0;
+	    }
+		}
+		.btn-blue {
+			background: $white;
+			color: $black;
+		}
+	}
+	&--hamburger {
+		position: relative;
+		span {
+			display: block;
+			height: 5px;
+			width: 30px;
+			margin-bottom: 5px;
+			border-radius: 15px;
+			background-color: $light-blue;
+		}
+		&.open {
+			position: fixed;
+			z-index: 2;
+			top: 16px;
+			left: 6px;
+			span {
+				visibility: hidden;
+				position: absolute;
+				&:first-child {
+					visibility: visible;
+					-webkit-transform: rotate(45deg);
+					   -moz-transform: rotate(45deg);
+					    -ms-transform: rotate(45deg);
+					     -o-transform: rotate(45deg);
+					        transform: rotate(45deg);
+				}
+				&:last-child {
+					visibility: visible;
+					-webkit-transform: rotate(-45deg);
+					   -moz-transform: rotate(-45deg);
+					    -ms-transform: rotate(-45deg);
+					     -o-transform: rotate(-45deg);
+					        transform: rotate(-45deg);
+				}
+			}
+			&:before {
+				content:'';
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: -1;
+				height: 100vh;
+				width: 100%;
+				background-color: rgba(0, 0, 0, 0.57);
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+	.header {
+		&--mobile {
+			display: none;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.header {
+		&--link {
+			margin-right: 5px;
+		}
+		&--block {
+			display: none;
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.header {
+		&--link {
+			margin-right: 5px;
+		}
+	}
+	
+}

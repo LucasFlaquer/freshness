@@ -1,0 +1,15 @@
+* {
+	font-family: 'Georgia Regular', cursive;
+}
+.btn {
+	&.btn-blue {
+		border-radius: 15px;
+		background-color: $light-blue;
+		color:$white;
+	}
+}
+body {
+	&.open {
+		overflow: hidden;
+	}
+}

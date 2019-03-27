@@ -1,0 +1,27 @@
+.services {
+	padding:20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+
+	&--item {
+		padding: 10px;
+		display: flex;
+	}
+	&--image {
+		margin-right: 20px;
+		padding: 3px;
+		border: 1px solid darken($gray, 40);
+	}
+	&--title {
+		font-size: 13px;
+		color: $light-blue;
+	}
+	&--description {
+		font-size: 12px;
+	}
+}
+@media (max-width: 767px) {
+	.services {
+		grid-template-columns: 1fr;
+	}
+}

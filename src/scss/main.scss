@@ -1,0 +1,19 @@
+@import "setup";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/font-awesome/scss/font-awesome";
+@import "node_modules/animate.css/animate.min";
+
+
+@import "project/variables";
+@import "project/fonts";
+@import "project/global";
+
+//org
+@import "project/organism/org-header";
+@import "project/organism/org-footer";
+
+//mol
+@import "project/molecules/mol-banner";
+@import "project/molecules/mol-project";
+@import "project/molecules/mol-shout";
+@import "project/molecules/mol-services";
